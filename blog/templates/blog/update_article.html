@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Article</title>
+</head>
+<body>
+<form action="{% url 'blog:update_action' article.id %}" method="post">
+    {% csrf_token %}
+    <label>文章标题
+        <input type="text" name="title" value="{{article.title}}">
+    </label>
+    <br/>
+    <label>文章内容
+        <br/>
+        <textarea rows="10" cols="50" name="content">{{article.content}}
+        </textarea>
+    </label>
+    <br/>
+    <input type="submit">
+</form>
+</body>
+</html>
